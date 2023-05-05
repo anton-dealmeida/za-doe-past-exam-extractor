@@ -17,8 +17,8 @@ import os
 import asyncio
 from urllib.parse import urljoin
 import aiohttp
-from fetch import get_subject_links, get_exam_links
 from tqdm.asyncio import tqdm
+from fetch import get_subject_links, get_exam_links
 from download import download_file
 
 LIMIT_CONCURRENT_DOWNLOADS = 5

@@ -44,7 +44,6 @@ async def get_exam_links(table):
     Fetch exam links for a specific subject using an aiohttp session.
     
     Args:
-        session (aiohttp.ClientSession): The aiohttp session used to make requests.
         table (bs4.element.Tag): The BeautifulSoup object representing the subject's table.
         
     Returns:
@@ -61,7 +60,7 @@ async def get_exam_links(table):
         if title_cell and download_cell:
             title = title_cell.text
             download_link = download_cell.a["href"]
-            file_name = title.replace(" ", "_") + ".pdf"
+            file_name = title.replace(" ", "_")
             exam_links.append((download_link, file_name))
 
     return exam_links
